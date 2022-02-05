@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="card">
+        <div id="card-inside">
+          <div class="wrap">
+                   <div class="text">
+        <pre>
+          <style style="display: inline-block;" class="code" contenteditable>
+          </style>
+        </pre>
+      </div>         
+          </div>
+        </div>
+    
+        <div id="card-front">
+          <div class="wrap">
+            <h1>Happy Birthday</h1>
+            <h1>Tataa ! </h1>
+                     <div class="heart-icon"></div>
+          </div>
+          <button id="open">&gt;</button>
+          <button id="close">&lt;</button>
+        </div>
+      </div>
+
+<script>(function() {
+    function $(id) {
+      return document.getElementById(id);
+    }
+  
+    var card = $('card'),
+        openB = $('open'),
+        closeB = $('close'),
+        timer = null;
+    console.log('wat', card);
+    openB.addEventListener('click', function () {
+      card.setAttribute('class', 'open-half');
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(function () {
+        card.setAttribute('class', 'open-fully');
+        timer = null;
+      }, 1000);
+    });
+  
+    closeB.addEventListener('click', function () {
+      card.setAttribute('class', 'close-half');
+      if (timer) clearTimerout(timer);
+      timer = setTimeout(function () {
+        card.setAttribute('class', '');
+        timer = null;
+      }, 1000);
+    });
+  
+  }());
+  
+  
+  
+  const style = document.querySelector(".text pre style");
+  const card = document.querySelector(".front face back face");
+  
+  
+  script = `
+      .........
+      hey there,
+
+  I never felt happiness
+      until you came into my life.
+    You mean the world to me.
+
+  On this special day of yours…
+    I pray for sunshine, love, peace,
+      and happiness in your life. 
+
+  May God envelop you in His special love,
+    and shower you with His abundant blessings.
+      Happy birthday Tataa.
+
+    I love you.
+      and i'll always be here for you. ❤
+
+   .............
+        
+                                       Alit Setiawan.
+  `;
+  
+  
+  let counter = 0;
+  
+  let intervalID = setInterval(() => {
+    counter++;
+    style.textContent = script.substring(0, counter);
+    style.scrollTop = style.scrollHeight;
+    if(counter > script.length) {
+      clearInterval(intervalID);
+    }
+  }, 90);</script>
+</body>
+</html>
